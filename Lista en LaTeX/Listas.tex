@@ -1,0 +1,1159 @@
+
+
+\documentclass[a4paper,12pt]{article}
+
+% Other options in place of 'report' are 1)article 2)book 3)letter
+% Other options in place of 'a4paper' are 1)a5paper 2)b5paper 3)letterpaper 4)legalpaper 5)executivepaper
+
+
+ %%%%%%%%%%%%  Include Packages  %%%%%%%%%%%%%%
+
+
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage[normalem]{ulem}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{wasysym}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage{ragged2e}
+\usepackage{longtable}
+\usepackage{changepage}
+\usepackage{setspace}
+\usepackage{hhline}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{fancyhdr}
+\usepackage[toc,page]{appendix}
+\usepackage[a4paper,left=1.18in,right=1.18in,top=0.98in,bottom=0.98in,headheight=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{color,hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,1}
+
+
+ %%%%%%%%%%%%  Define Colors For Hyperlinks  %%%%%%%%%%%%%%
+
+
+\urlstyle{same}
+
+
+ %%%%%%%%%%%%  Set Depths for Sections  %%%%%%%%%%%%%%
+
+% 1) Section
+% 1.1) SubSection
+% 1.1.1) SubSubSection
+% 1.1.1.1) Paragraph
+% 1.1.1.1.1) Subparagraph
+
+
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+
+ %%%%%%%%%%%%  Set Page Margins  %%%%%%%%%%%%%%
+
+
+\everymath{\displaystyle}
+
+
+ %%%%%%%%%%%%  Set Depths for Nested Lists created by \begin{enumerate}  %%%%%%%%%%%%%%
+
+
+\setlistdepth{9}
+\newlist{custom_Enumerate}{enumerate}{9}
+	\setlist[custom_Enumerate,1]{label=\arabic*)}
+	\setlist[custom_Enumerate,2]{label=\alph*)}
+	\setlist[custom_Enumerate,3]{label=(\roman*)}
+	\setlist[custom_Enumerate,4]{label=(\arabic*)}
+	\setlist[custom_Enumerate,5]{label=(\Alph*)}
+	\setlist[custom_Enumerate,6]{label=(\Roman*)}
+	\setlist[custom_Enumerate,7]{label=\arabic*}
+	\setlist[custom_Enumerate,8]{label=\alph*}
+	\setlist[custom_Enumerate,9]{label=\roman*}
+
+\renewlist{itemize}{itemize}{9}
+	\setlist[itemize]{label=$\cdot$}
+	\setlist[itemize,1]{label=\textbullet}
+	\setlist[itemize,2]{label=$\circ$}
+	\setlist[itemize,3]{label=$\ast$}
+	\setlist[itemize,4]{label=$\dagger$}
+	\setlist[itemize,5]{label=$\triangleright$}
+	\setlist[itemize,6]{label=$\bigstar$}
+	\setlist[itemize,7]{label=$\blacklozenge$}
+	\setlist[itemize,8]{label=$\prime$}
+
+
+
+ %%%%%%%%%%%%  This sets linespacing (verticle gap between Lines) Default=1 %%%%%%%%%%%%%%
+
+\setstretch{1.08}
+\title{Lista en C++}
+\date{}
+
+
+\begin{document}
+\sloppy
+
+\noindent \begin{Center}
+{\fontsize{14pt}{14pt}\selectfont \textbf{Corporacion Univeritaria Minuto de Dios}}
+\end{Center}\par
+
+
+\noindent \begin{Center}
+{\fontsize{14pt}{14pt}\selectfont \textbf{UNIMINUTO}}
+\end{Center}\par
+
+
+\noindent \begin{Center}
+{\fontsize{14pt}{14pt}\selectfont \textbf{Asignatura:}}
+\end{Center}\par
+
+
+\noindent \begin{Center}
+{\fontsize{14pt}{14pt}\selectfont Estructura de Datos}
+\end{Center}\par
+
+
+\noindent \begin{Center}
+{\fontsize{14pt}{14pt}\selectfont NRC :7233}
+\end{Center}\par
+
+
+\noindent \begin{Center}
+{\fontsize{14pt}{14pt}\selectfont \textbf{Tema}}
+\end{Center}\par
+
+\maketitle
+\par
+
+
+\noindent \begin{Center}
+{\fontsize{14pt}{14pt}\selectfont \textbf{Presentado:}}
+\end{Center}\par
+
+
+\noindent \begin{Center}
+{\fontsize{14pt}{14pt}\selectfont Michael Daniel Murillo LópezID:534830}
+\end{Center}\par
+
+
+\noindent \begin{Center}
+{\fontsize{14pt}{14pt}\selectfont \textbf{DOCENTE: }}
+\end{Center}\par
+
+
+\noindent \begin{Center}
+{\fontsize{14pt}{14pt}\selectfont Segundo Fidel Puerto Garavito}
+\end{Center}\par
+
+
+\noindent \begin{Center}
+{\fontsize{14pt}{14pt}\selectfont Colombia Ciudad De Bogotá D.C\hspace*{0.49in}\hspace*{0.49in}\hspace*{0.49in}septiembre 27 de 2017}
+\end{Center}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont Se Necesita crear una Agenda en donde se necesita los siguientes requisitos }\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont La agenda debe agregar Nombre, Apellido, Correo Electrónico, Teléfono, Celular }\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont La agenda debe modificar un dato especifico o todos.}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont La agenda debe eliminar un contacto especifico.}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont La agenda debe ver un contacto especifico o todos. }\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont El archivo se debe guardar en un documento de texto. Los Datos deben ser los que se piden en el momento de agregar.}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{/*}}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{ * To change this license header, choose License Headers in Project Properties.}}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{ * To change this template file, choose Tools $ \vert $ Templates}}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{ * and open the template in the editor.}}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{ */}}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{/**}}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{ *}}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{ * @author Michael Daniel Murillo López}}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{ * Estrutura de Datos}}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{ * ID:534830 Corporación}}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{ * Universitaria Minuto de Dios - UNIMINUTO }}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{ * NRC:7273}}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{ */}}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont $\#$include <stdlib.h> }\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont $\#$include <iostream> }\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont $\#$include <fstream> }\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont $\#$include <string.h> }\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont using namespace std;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{//Prototipo de funciones. }}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont void Anadir();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont void Eliminar();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont void Editar();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont void Ver();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont void VerTodo();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont void Informacion();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{//Definicion de estructura. }}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont struct informacion $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ char cedula [25];}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ char nombre[25];}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ char apellido[25];}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ char correo[100];}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ char direccion[100];}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ char telefono[25];}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ char celular[25];}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont persona[25];}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{//Declaracion de variables. }}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont int opcion;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont int registro = 0;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont char sn[10];}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont int main() $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ system("Color 2F");}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $" << endl << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~$ \_ $$ \_ $$ \string^ $$ \_ $$ \_ $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  $ \_ $$ \_ $$ \string^ $$ \_ $$ \_ $" << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "( $ \_ $$ \_ $$ \_ $ )------------------------------------( $ \_ $$ \_ $$ \_ $ )" << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~$ \vert $~~~$ \vert $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ $ \vert $   $ \vert $" << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~$ \vert $~*~$ \vert $~~~~~~~~    Agenda en~~~~~~~~~~~~~~~~ $ \vert $ * $ \vert $" << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~$ \vert $~*~$ \vert $~~~~~~~~~~~~~~~C++~~~~~~~~~~~~~~~     $ \vert $ * $ \vert $" << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~$ \vert $$ \_ $$ \_ $$ \_ $$ \vert $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  $ \vert $$ \_ $$ \_ $$ \_ $$ \vert $" << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "($ \_ $$ \_ $$ \_ $$ \_ $$ \_ $)------------------------------------($ \_ $$ \_ $$ \_ $$ \_ $$ \_ $)" << endl << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~~~~~~~~~ 1. Anadir un contacto." << endl << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~~~~~~~~~ 2. Eliminar un contacto." << endl << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~~~~~~~~~ 3. Editar un contacto." << endl << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~~~~~~~~~ 4. Ver informacion de un contacto." << endl << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~~~~~~~~~ 5. Ver todos los contactos." << endl << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~~~~~~~~~ 6. Ver registro en Agenda.txt" << endl << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~~~~~~~~~ 7. Informacion << " << endl << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~~~~~~~~~ 8. Salir." << endl << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $$ \_ $" << endl << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "Numero de operacion a realizar: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cin >> opcion;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ switch (opcion) $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ case 1:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ Anadir();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ case 2:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ Eliminar();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ case 3:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ Editar();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ case 4:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ Ver();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ case 5:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ VerTodo();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ case 6:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ system("Agenda.txt");}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ main();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ case 7:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ informacion();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ case 8:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ exit(0);}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ default:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ cout << "Operacion incorrecta. Escriba nuevamente la operacion a realizar";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ main();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ return 0;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{//Fin main. }}\par
+
+
+\noindent \href{http://c.conclase.net/edd/?cap=001b}{$ \string^ $}\par
+
+
+\noindent \begin{justify}
+{\fontsize{14pt}{14pt}\selectfont Con las listas tendremos un pequeño repertorio de operaciones básicas que se pueden realizar:}
+\end{justify}\par
+
+\begin{itemize}
+	\item \begin{justify}
+{\fontsize{14pt}{14pt}\selectfont Añadir o insertar elementos.}
+\end{justify}\par
+
+	\item \begin{justify}
+{\fontsize{14pt}{14pt}\selectfont Buscar o localizar elementos.}
+\end{justify}\par
+
+	\item \begin{justify}
+{\fontsize{14pt}{14pt}\selectfont Borrar elementos.}
+\end{justify}\par
+
+	\item \begin{justify}
+{\fontsize{14pt}{14pt}\selectfont Moverse a través de una lista, anterior, siguiente, primero.}
+\end{justify}
+\end{itemize}\par
+
+
+\noindent \begin{justify}
+{\fontsize{14pt}{14pt}\selectfont Cada una de estas operaciones tendrá varios casos especiales, por ejemplo, no será lo mismo insertar un nodo en una lista vacía, o al principio de una lista no vacía, o la final, o en una posición intermedia.}
+\end{justify}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont \textit{//Definicion de funciones. }}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont void Anadir() $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "Escriba la siguiente informacion del contacto.";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "1. Cedula: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cin >> persona[registro].cedula;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "2. Nombre: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cin >> persona[registro].nombre;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "3. Apellido: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cin >> persona[registro].apellido;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "4. Fecha nacimiento: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cin >> persona[registro].correo;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "5. Direccion: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cin >> persona[registro].direccion;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "6. Telefono: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cin >> persona[registro].telefono;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "7. Celular: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cin >> persona[registro].celular;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ \textit{////// Entrada/Salida a archivo de texto "Agenda.txt" }}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ ofstream archivo;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ archivo.open("Agenda.txt", ios::app);}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ archivo << "Cedula: " << persona[registro].cedula << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ archivo << "Nombre: " << persona[registro].nombre << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ archivo << "Apellido: " << persona[registro].apellido << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ archivo << "Correo Electronico: " << persona[registro].correo << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ archivo << "Direccion: " << persona[registro].direccion << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ archivo << "Telefono: " << persona[registro].telefono << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ archivo << "Celular: " << persona[registro].celular << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ archivo.close();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ \textit{////// Fin de Entrada/Salida a archivo de texto "Agenda.txt" }}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ registro++;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << endl << "Contacto anadido." << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ main();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont void Eliminar() $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ int opcionEliminar;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "Numero de registro a eliminar: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cin >> opcionEliminar;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ opcionEliminar--;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ if (opcionEliminar < registro) $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "1. Cedula: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[opcionEliminar].cedula;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "2. Nombre: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[opcionEliminar].nombre;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "3. Apellido: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[opcionEliminar].apellido;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "4. Correo Electronico ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[opcionEliminar].correo;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "5. Direccion: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[opcionEliminar].direccion;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "6. Telefono: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[opcionEliminar].telefono;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "7. Celular: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[opcionEliminar].celular;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ do $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ cout << "Eliminar contacto de la agenda? [S/N]: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ cin >> sn;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ if ((strcmp(sn, "s") == 0) $ \vert $$ \vert $ (strcmp(sn, "S") == 0)) $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ persona[opcionEliminar] = persona[registro];}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << endl << "Contacto eliminado." << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ main();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ if ((strcmp(sn, "n") == 0) $ \vert $$ \vert $ (strcmp(sn, "N") == 0)) $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << "Contacto no eliminado.";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ main();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ $ \} $ while ((sn != "S") $ \vert $$ \vert $ (sn != "s") $ \vert $$ \vert $ (sn != "N") $ \vert $$ \vert $ (sn != "n"));}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ else $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "Numero de registro no existente.";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ +}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ main();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont void Editar() $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ int opcionEditar;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ int informacionEditar;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "Numero de registro a editar: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cin >> opcionEditar;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ opcionEditar--;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ if (opcionEditar < registro) $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "1. Cedula: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[opcionEditar].cedula;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "2. Nombre: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[opcionEditar].nombre;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "3. Apellido: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[opcionEditar].apellido;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "4. Correo Electronico ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[opcionEditar].correo;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "5. Direccion: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[opcionEditar].direccion;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "6. Telefono: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[opcionEditar].telefono;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "7. Celular: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[opcionEditar].celular;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "8. Todo. ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "9. Nada. ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "Informacion a editar: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cin >> informacionEditar;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ switch (informacionEditar) $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ case 1:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << "1. Cedula: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cin >> persona[opcionEditar].cedula;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ case 2:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << "2. Nombre: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cin >> persona[opcionEditar].nombre;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ case 3:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << "3. Apellido: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cin >> persona[opcionEditar].apellido;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ case 4:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << "4. Correo Electronico ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cin >> persona[opcionEditar].correo;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ case 5:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << "5. Direccion: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cin >> persona[opcionEditar].direccion;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ case 6:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << "6. Telefono: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cin >> persona[opcionEditar].telefono;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ case 7:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << "7. Celular: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cin >> persona[opcionEditar].celular;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ case 8:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << "1. Cedula: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cin >> persona[opcionEditar].cedula;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << "2. Nombre: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cin >> persona[opcionEditar].nombre;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << "3. Apellido: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cin >> persona[opcionEditar].apellido;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << "4. Correo Electronico~ ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cin >> persona[opcionEditar].correo;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << "5. Direccion: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cin >> persona[opcionEditar].direccion;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << "6. Telefono: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cin >> persona[opcionEditar].telefono;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << "7. Celular: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cin >> persona[opcionEditar].celular;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ case 9:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ main();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~ default:}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ cout << "Operacion incorrecta. Escriba nuevamente la informacion a editar.";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ Editar();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~~~~~~~~~ break;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ main();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ else $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "Numero de registro no existente.";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ main();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont void Ver() $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ int ver;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "Numero de registro a ver: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cin >> ver;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ ver--;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ if (ver < registro) $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "$\textbackslash$n1. Cedula: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[ver].cedula;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "$\textbackslash$n2. Nombre: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[ver].nombre;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "$\textbackslash$n3. Apellido: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[ver].apellido;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "$\textbackslash$n4. Correo Eletronico ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[ver].correo;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "$\textbackslash$n5. Direccion: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[ver].direccion;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "$\textbackslash$n6. Telefono: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[ver].telefono;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "$\textbackslash$n7. Celular: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[ver].celular;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ main();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ else $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "Numero de registro no existente.";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ main();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont void VerTodo() $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ int verTodo;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ for (verTodo = 0; verTodo < registro; verTodo++) $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "$\textbackslash$n1. Cedula: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[verTodo].cedula;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "$\textbackslash$n2. Nombre: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[verTodo].nombre;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "$\textbackslash$n3. Apellido: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[verTodo].apellido;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "$\textbackslash$n4. Correo Electronico ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[verTodo].correo;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "$\textbackslash$n5. Direccion: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[verTodo].direccion;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "$\textbackslash$n6. Telefono: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[verTodo].telefono;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << "$\textbackslash$n7. Celular: ";}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ cout << persona[verTodo].celular;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~~~~~ system("pause > nul");}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ main();}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont $ \} $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont void informacion() $ \{ $}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~ " << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "Michael Daniel Murillo López" << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~~~~~~~~~Id~:534830~~~~~~   " << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~ " << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << " Corporación Universitaria~ " << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~~~~~ Minuto~de~Dios~~~~~   " << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~ " << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont ~~~ cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~ " << endl;}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont $ \} $}\par
+
+\begin{justify}
+{\fontsize{14pt}{14pt}\selectfont Una lista es un tipo de dato autor referenciado porque contienen un puntero o enlace (en inglés link, del mismo significado) a otro dato del mismo tipo. Las listas enlazadas permiten inserciones y eliminación de nodos en cualquier punto de la lista en tiempo constante (suponiendo que dicho punto está previamente identificado o localizado), pero no permiten un acceso aleatorio}
+\end{justify}\par
+
+
+\noindent {\fontsize{14pt}{14pt}\selectfont Ventajas}\par
+
+{\fontsize{14pt}{14pt}\selectfont Como muchas opciones en programación y desarrollo, no existe un único método correcto para resolver un problema. Una estructura de lista enlazada puede trabajar bien en un caso, pero causar problemas en otros. He aquí una lista con algunas de las ventajas más comunes que implican las estructuras de tipo lista. En general, teniendo una colección dinámica donde los elementos están siendo añadidos y eliminados frecuentemente e importa la localización de los nuevos elementos introducidos se incrementa el beneficio de las listas}\par
+
+\end{document}
